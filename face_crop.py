@@ -37,7 +37,7 @@ for DIR in dirs:
     out_DIR = DIR.replace('New Masks Dataset', 'Cropped Dataset')
     pics = os.listdir(DIR)
     for pic in pics:
-        print('handling pic:', DIR + pic)
+        # print('handling pic:', DIR + pic)
         img = cv2.imread(DIR + pic)
         height = img.shape[0]
         width = img.shape[1]
