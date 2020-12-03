@@ -43,14 +43,21 @@ for DIR in dirs:
         width = img.shape[1]
         size = height * width
 
-        if size > (500 ^ 2):
-            r = 500.0 / img.shape[1]
-            dim = (500, int(img.shape[0] * r))
-            img2 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
-            img = img2
+        # resizing speeds it up but misses a lot of faces.
+        # gonna comment it since we have a limited datasize
+        # if size > (500 ** 2):
+        #     r = 500.0 / img.shape[1]
+        #     dim = (500, int(img.shape[0] * r))
+        #     img2 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
+        #     img = img2
 
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        # 2nd param: scaleFactor
+        # values closer to 1.x = 1 are better, increasing chance to match
+        # due to reducing size by x%
+        # 3rd param: minNeighbors
+        # Higher value = less detections, higher quality?
+        faces = face_cascade.detectMultiScale(gray, 1.05, 6)
         eyesn = 0
 
         for (x, y, w, h) in faces:
@@ -59,7 +66,7 @@ for DIR in dirs:
             roi_gray = gray[y:y+h, x:x+w]
             roi_color = img[y:y+h, x:x+w]
 
-            eyes = eye_cascade.detectMultiScale(roi_gray)
+            eyes = eye_cascade.detectMultiScale(roi_gray, 1.1, 3)
             for (ex, ey, ew, eh) in eyes:
                 # cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
                 eyesn = eyesn + 1
