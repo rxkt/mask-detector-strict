@@ -1,7 +1,8 @@
 Dataset obtained from  
 https://www.kaggle.com/prithwirajmitra/covid-face-mask-detection-dataset/notebooks
 
-The data folder with all images used was added to this repository to show the outcome of preprocessing the data using `face_crop.py`.  
+The sample-data folder with images used was added to this repository to show the outcome of preprocessing the data using `face_crop.py`. The actual data folder is not being tracked nor added to this repo because it will be updated with more images.
+
 This achieves a 97~98% training accuracy, 93% test accuracy with our CNN model as opposed to a low 90% training accuracy, and an even lower test accuracy.
 
 To-do:
