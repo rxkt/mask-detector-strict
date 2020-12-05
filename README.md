@@ -17,6 +17,9 @@ To-do:
 
 - Integration of the mask model & the dlib mouth/mask detection function
 
+Ideally we would be able to train a model of an "improper mask" vs. a "proper mask" but there is not yet a dataset out there at the moment.  
+OpenCV Mouth/Nose haarcascades were too unreliable as they detected eyes as mouths/noses, so dlib was used instead.
+
 Dependencies:  
 Image  
 opencv-python  
