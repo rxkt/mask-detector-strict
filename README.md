@@ -19,4 +19,6 @@ Dependencies:
 Image  
 opencv-python  
 tensorflow  
-keras
+keras  
+dlib  
+imutils
