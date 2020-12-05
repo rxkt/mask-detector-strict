@@ -13,7 +13,9 @@ To-do:
 
 ~~- Currently overfitting with 80% validation accuracy due to very low number of input files after preprocessing. Currently this dataset is a poor representation of how a picture of a face would be. Will add more images to train later.~~
 
-- Adding a "nose", "mouth" detection using dlib or opencv after we determine that a mask is in the picture. We want to be able to determine if this person is not "fully" or "properly" wearing a mask.
+~~- Adding a "nose", "mouth" detection using dlib or opencv after we determine that a mask is in the picture. We want to be able to determine if this person is not "fully" or "properly" wearing a mask.~~
+
+- Integration of the mask model & the dlib mouth/mask detection function
 
 Dependencies:  
 Image  
